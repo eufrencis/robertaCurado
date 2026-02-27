@@ -1,0 +1,388 @@
+/* 1. Definição da Paleta de Cores (da logo da Dra. Roberta) */
+:root {
+  /* Turquesa da logo (para o botão principal e títulos) */
+  --cor-primaria-turquesa: #16a8a1;
+  /* Verde-limão da logo (para a base e detalhes) */
+  --cor-secundaria-verde-limao: #8cc63f;
+  /* Fundo super-limpo e suave (para clareza) */
+  --cor-fundo-suave: #f9fdfc;
+  /* Cinza escuro azulado para texto (para legibilidade) */
+  --cor-texto: #33413f;
+  /* Branco puro para texto em botões */
+  --cor-branco: #ffffff;
+}
+
+/* 2. Estilo Global do Corpo */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--cor-fundo-suave);
+  color: var(--cor-texto);
+  line-height: 1.6;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main, .conteudo-principal {
+    flex: 1;
+}
+
+/* 3. Cabeçalho (Menu) - Como o do Dr. Pedro, mas com a cor da Dra. Roberta */
+/* 3. Cabeçalho (Menu) - Com animação de entrada */
+header {
+  background-color: #f1f8f7;
+  padding: 10px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  /* AQUI ESTÁ A ANIMAÇÃO */
+  animation: descerHeader 0.8s ease-out forwards;
+}
+
+/* Definição do movimento */
+@keyframes descerHeader {
+  from {
+    transform: translateY(-100%); /* Começa totalmente fora da tela (em cima) */
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0); /* Termina na posição original */
+    opacity: 1;
+  }
+}
+
+.logo-placeholder img {
+  height: 80px; /* Ajustei para não ficar grande demais no header */
+  width: auto;
+  display: block;
+}
+
+nav {
+  flex-grow: 1; /* Faz o nav ocupar o espaço entre a logo e o fim do header */
+  display: flex;
+  justify-content: left; /* Centraliza a lista (ul) dentro do nav */
+  margin-left: 50px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px; /* Aumentei o espaço entre os links para ficar mais elegante */
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--cor-texto);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--cor-primaria-turquesa);
+}
+
+/* 4. Conteúdo Principal (Hero Section) */
+.conteudo-principal {
+  max-width: 900px;
+  margin: 80px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* Título - Mantendo a hierarquia do site de referência */
+.conteudo-principal h1 {
+  color: var(--cor-texto);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.conteudo-principal .nome-dr {
+  color: var(--cor-primaria-turquesa);
+  font-weight: bold;
+}
+
+/* Subtítulo de destaque (como o PhD) */
+.conteudo-principal h2 {
+  color: var(--cor-texto);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.subtitulo-areas {
+  color: var(--cor-secundaria-verde-limao);
+  font-weight: bold;
+}
+
+/* Parágrafo de descrição */
+.conteudo-principal p {
+  color: var(--cor-texto);
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 5. O Botão CTA Principal - Totalmente adaptado */
+.botao-consulta {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--cor-primaria-turquesa);
+  color: var(--cor-branco);
+  text-decoration: none;
+  padding: 15px 40px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition:
+    transform 0.2s,
+    background-color 0.3s;
+  box-shadow: 0 4px 6px rgba(22, 168, 161, 0.3);
+  border: 2px solid transparent;
+}
+
+.botao-consulta:hover {
+  background-color: #128c86; /* Um tom mais escuro para o hover */
+  transform: translateY(-2px);
+}
+
+/* O ícone de seta do botão */
+.seta-icone {
+  margin-left: 10px;
+  font-size: 1rem;
+}
+
+/* 6. A Frase Final Acolhedora - Usando o verde-limão */
+.frase-final {
+  margin-top: 80px;
+  text-align: center;
+  color: var(--cor-secundaria-verde-limao);
+  font-size: 1.4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+#whats {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 90px;
+  height: 80px;
+  z-index: 9999; /* Garante que fique por cima de tudo */
+}
+
+#whats img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Esconde o checkbox por padrão */
+#menu-check {
+  display: none;
+}
+
+/* Estilo do ícone de 3 traços (Hambúrguer) */
+.menu-botao {
+  display: none; /* Escondido no computador */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-botao span {
+  width: 30px;
+  height: 3px;
+  background-color: var(--cor-primaria-turquesa);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+footer {
+    width: 100%;
+    background-color: #ffffff; /* Fundo branco atrás da logo */
+    text-align: center;
+    margin-top: auto; /* Garante que fique no fim da página */
+}
+
+/* Área da Logo */
+.footer-logo {
+    padding: 30px 0;
+}
+
+.footer-logo img {
+    height: 70px; /* Ajuste o tamanho conforme necessário */
+    width: auto;
+}
+
+/* Faixa Colorida (Igual ao modelo do Dr. Pedro) */
+/* Faixa das Redes Sociais (Topo do Footer) */
+/* Faixa das Redes Sociais com a cor de fundo do site */
+.footer-social {
+    background-color: var(--cor-fundo-suave); /* Usa a cor do site */
+    padding: 20px 0 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    border-top: 1px solid rgba(22, 168, 161, 0.1); /* Linha bem fininha para separar */
+}
+
+.footer-social img {
+    height: 32px;
+    width: auto;
+    /* Aqui, se os ícones forem pretos, eles ficarão na cor Turquesa */
+    filter: invert(47%) sepia(88%) saturate(347%) hue-rotate(128deg) brightness(92%) contrast(91%);
+    transition: transform 0.3s ease;
+}
+
+.footer-social img:hover {
+    transform: translateY(-3px); /* Efeito de subir de leve ao passar o mouse */
+}
+
+/* Área da Logo */
+.footer-logo {
+    background-color: #ffffff; /* Fundo branco para destacar a logo */
+    padding: 30px 0;
+}
+
+.footer-logo img {
+    height: 70px;
+}
+
+/* Faixa de Informações (Turquesa da logo) */
+.footer-info {
+    background-color: var(--cor-primaria-turquesa);
+    padding: 15px 20px;
+    color: white;
+}
+
+.footer-info p {
+    margin: 0;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 15px 0 0 0; /* Tira o padding lateral para a barra ocupar tudo */
+    flex-direction: column; /* Coloca a logo em cima e a barra embaixo */
+    align-items: center;
+  }
+
+  .logo-placeholder {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo-placeholder img {
+    height: 60px; /* Logo um pouco menor no celular */
+  }
+
+  /* A barra onde fica o ícone de 3 pontos */
+  .menu-botao {
+    display: flex;
+    width: 100vw; /* Força ocupar a largura total da janela */
+    background-color: var(--cor-primaria-turquesa);
+    padding: 12px 0;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    cursor: pointer;
+    margin-left: calc(
+      -50vw + 50%
+    ); /* Técnica para ignorar paddings do header e centralizar na tela */
+  }
+
+  .menu-botao span {
+    background-color: white; /* Deixa os traços brancos para destacar no turquesa */
+  }
+
+  /* O menu que abre (Dropdown) */
+  /* O menu que abre (Dropdown) - Ajustado para centro total */
+  /* O menu pergaminho ajustado */
+  nav {
+    display: flex; /* Mudamos de none para flex para permitir a animação */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%; /* Ocupa a largura total da barra turquesa */
+    background-color: var(--cor-primaria-turquesa);
+    text-align: center;
+    z-index: 1000;
+    margin: 0;
+
+    /* CONFIGURAÇÃO DO PERGAMINHO */
+    transform: scaleY(0); /* Começa "esmagado" no topo */
+    transform-origin: top; /* Define que ele abre de cima para baixo */
+    opacity: 0; /* Começa invisível */
+    transition:
+      transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.5s ease;
+    overflow: hidden; /* Impede que os links apareçam antes da hora */
+  }
+
+  /* Quando o checkbox é marcado, o pergaminho desce */
+  #menu-check:checked ~ nav {
+    display: flex; /* Garante que apareça */
+    transform: scaleY(1); /* Estica até o tamanho real */
+    opacity: 1; /* Fica visível */
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    margin: 0;
+    width: 100%; /* Garante que a lista preencha o nav */
+    list-style: none;
+  }
+
+  nav li {
+    width: 100%; /* Faz a área de clique ocupar a largura toda */
+  }
+  nav a {
+    color: white !important; /* Texto branco no menu aberto */
+  }
+
+  /* Quando o checkbox estiver marcado, mostra o menu */
+  #menu-check:checked ~ nav {
+    display: flex;
+  }
+
+  /* Suas animações do X (mantidas) */
+  #menu-check:checked ~ .menu-botao span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  #menu-check:checked ~ .menu-botao span:nth-child(2) {
+    opacity: 0;
+  }
+  #menu-check:checked ~ .menu-botao span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  .footer-logo img {
+        height: 50px;
+    }
+    .footer-info {
+        font-size: 0.8rem;
+    }
+}
+
+  
+
