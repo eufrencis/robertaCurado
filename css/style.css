@@ -244,8 +244,11 @@ footer {
 .footer-social img {
     height: 32px;
     width: auto;
-    /* Aqui, se os ícones forem pretos, eles ficarão na cor Turquesa */
-    filter: invert(47%) sepia(88%) saturate(347%) hue-rotate(128deg) brightness(92%) contrast(91%);
+    background: transparent !important; /* Remove o fundo quadrado indesejado */
+    border: none !important;
+    
+    /* PINTA APENAS O DESENHO DO ÍCONE DE TURQUESA */
+    
     transition: transform 0.3s ease;
 }
 
@@ -275,6 +278,11 @@ footer {
     font-weight: 400;
 }
 
+
+.secao-agendamento-ajustada {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
 @media (max-width: 768px) {
   header {
     padding: 15px 0 0 0; /* Tira o padding lateral para a barra ocupar tudo */
