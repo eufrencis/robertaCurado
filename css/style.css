@@ -34,7 +34,12 @@ main,
 /* 3. Cabeçalho (Menu) - Como o do Dr. Pedro, mas com a cor da Dra. Roberta */
 /* 3. Cabeçalho (Menu) - Com animação de entrada */
 header {
-  background-color: #f1f8f7;
+  /* 1. A cor precisa ter transparência (o '0.8' no final) */
+  background-color: rgba(241, 248, 247, 0.8); 
+  
+  /* 2. O efeito de desfoque no que está ATRÁS do header */
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); /* Suporte para Safari/iPhone */
   padding: 10px 50px;
   display: flex;
   justify-content: space-between;
@@ -272,12 +277,19 @@ footer {
   background-color: var(--cor-primaria-turquesa);
   padding: 15px 20px;
   color: white;
+  /* ESTAS 3 LINHAS SÃO A CHAVE: */
+  display: flex;
+  flex-direction: column; /* Força um item em cima do outro */
+  align-items: center;    /* Centraliza na horizontal */
+  gap: 5px;
 }
 
 .footer-info p {
   margin: 0;
+  display: block;
   font-weight: 400;
 }
+
 
 .secao-agendamento-ajustada {
   margin-bottom: 0 !important;
@@ -356,6 +368,131 @@ footer {
   object-fit: cover; /* Corta as sobras da foto sem distorcer o rosto */
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.secao-locais {
+    padding: 20px 20px 60px 20px;
+    margin-top: 0;
+    background-color: var(--cor-fundo-suave);
+    text-align: center;
+}
+
+.titulo-sessao {
+    color: var(--cor-primaria-turquesa);
+    margin-top: 0;           /* Remove o espaço acima do título */
+    margin-bottom: 30px;    /* Mantém um espaço saudável para os cards */
+    font-size: 2rem;
+}
+
+.container-locais {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Garante que no celular um fique embaixo do outro */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-local {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    width: 300px;
+    transition: transform 0.3s ease;
+    border-top: 5px solid var(--cor-secundaria-verde-limao);
+}
+
+.card-local:hover {
+    transform: translateY(-10px);
+}
+
+.card-local h3 {
+    color: var(--cor-texto);
+    margin-bottom: 10px;
+}
+
+.link-maps {
+    display: block;
+    margin: 15px 0;
+    color: var(--cor-primaria-turquesa);
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.link-maps:hover {
+    text-decoration: underline;
+    color: var(--cor-secundaria-verde-limao);
+}
+
+.telefone-local {
+    font-weight: bold;
+    color: var(--cor-texto);
+    margin-top: 10px;
+}
+/* Layout Geral da Seção */
+.secao-contato {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.grade-contatos-digitais {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto 50px;  
+    justify-content: center;  /* Isso centraliza os 4 itens na tela */   
+    flex-wrap: nowrap;
+}
+
+/* Estilo dos Ícones Circulares */
+.icone-circulo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.icone-circulo:hover { transform: scale(1.1); }
+
+/* Cores por Canal */
+.icone-circulo.whats { background-color: #25d366; }
+.icone-circulo.insta { background-color: #E1306C; }
+.icone-circulo.email { background-color: var(--cor-primaria-turquesa); } /* Turquesa da Roberta */
+.icone-circulo.lattes { background-color: var(--cor-secundaria-verde-limao); } /* Verde-limão da Roberta */
+
+.icone-circulo img {
+
+    width: 120%;
+    margin-left: -13px;
+    margin-top: 7px;
+   
+    
+   ; /* Deixa os ícones brancos */
+}
+
+/* Estilo dos Cards de Local (seguindo LocaisAtendimento.html) */
+.card-local {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    border-top: 5px solid var(--cor-secundaria-verde-limao);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.link-maps {
+    color: var(--cor-primaria-turquesa);
+    text-decoration: none;
+    font-weight: 500;
+    display: block;
+    margin-top: 10px;
 }
 
 
@@ -516,4 +653,11 @@ footer {
 
   margin-left: 8px;
 }
+
+.coluna-foto img {
+  
+  height: 300px; /* Define uma altura fixa para não ficar "gigante" */
+  
+}
+
 }
