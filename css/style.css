@@ -305,7 +305,7 @@ footer {
 .header-sobre h1 {
   color: white;
   margin: 0;
-  font-size: 1.5 rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -352,7 +352,7 @@ footer {
 .coluna-foto img {
   /* Não deixa esticar na largura */
   max-width: 100%;
-  height: 700 px; /* Define uma altura fixa para não ficar "gigante" */
+  height: 700px; /* Define uma altura fixa para não ficar "gigante" */
   object-fit: cover; /* Corta as sobras da foto sem distorcer o rosto */
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
