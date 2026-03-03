@@ -553,6 +553,74 @@ footer {
     margin-top: 10px;
 }
 
+/* Estilo do item individual */
+.faq-item {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    max-width: 800px; /* Alinha com o padrão do seu site */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.faq-item .faq-resposta {
+    max-height: 0;
+    overflow: hidden;
+    /* 0.6s é o tempo ideal para ser elegante sem ser demorado */
+    /* cubic-bezier dá aquele "balanço" no final do movimento */
+    transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1), 
+                padding 0.4s ease, 
+                opacity 0.6s ease;
+    opacity: 0; /* Começa invisível para um efeito de fade */
+    background-color: #fcfcfc;
+}
+
+/* Botão da Pergunta */
+.faq-pergunta {
+    width: 100%;
+    padding: 20px;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--cor-texto);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+/* Efeito Hover na pergunta */
+.faq-pergunta:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Container da Resposta (O Segredo do Pergaminho) */
+.faq-resposta {
+    max-height: 0;           /* Começa fechado */
+    overflow: hidden;        /* Esconde o texto que "sobra" */
+    transition: max-height 0.5s ease-out; /* Velocidade do deslize */
+    background-color: #f9f9f9;
+    text-align: left;
+}
+
+.faq-item.ativo .faq-resposta {
+    max-height: 800px; /* Valor alto para garantir que textos longos caibam */
+    opacity: 1;        /* Aparece suavemente */
+    padding-top: 10px;
+    padding-bottom: 25px;
+}
+
+
+.faq-resposta p {
+    padding: 20px;
+    margin: 0;
+    line-height: 1.6;
+    color: #666;
+}
+
+
 
 
 @media (max-width: 768px) {
