@@ -312,6 +312,7 @@ footer {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 8px;
 }
 
 .header-sobre h1 {
@@ -433,7 +434,7 @@ footer {
 }
 /* Layout Geral da Seção */
 .secao-contato {
-    padding: 40px 20px;
+    padding: -15px 20px;
     text-align: center;
 }
 
@@ -446,36 +447,93 @@ footer {
     justify-content: center;  /* Isso centraliza os 4 itens na tela */   
     flex-wrap: nowrap;
 }
-
-/* Estilo dos Ícones Circulares */
 .icone-circulo {
-    width: 100px;
+    width: 100px;           /* Tamanho do círculo no PC */
     height: 100px;
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 15px;
-    transition: transform 0.3s ease;
+    display: flex;          /* Ativa o Flexbox para centralizar a imagem */
+    align-items: center;    /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    background-color: #fff; /* Fundo branco para destacar os ícones */
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;       /* Garante que nada saia do círculo */
+    margin: 0 auto 15px;    /* Centraliza o círculo no card */
 }
 
-.icone-circulo:hover { transform: scale(1.1); }
-
-/* Cores por Canal */
-.icone-circulo.whats { background-color: #25d366; }
-.icone-circulo.insta { background-color: #E1306C; }
-.icone-circulo.email { background-color: var(--cor-primaria-turquesa); } /* Turquesa da Roberta */
-.icone-circulo.lattes { background-color: var(--cor-secundaria-verde-limao); } /* Verde-limão da Roberta */
-
+/* 2. A IMAGEM se ajusta ao container */
 .icone-circulo img {
-
-    width: 120%;
-    margin-left: -13px;
-    margin-top: 7px;
-   
+    /* Define o tamanho relativo ao círculo, não ao arquivo original */
+    width: 65%;             /* Todas as imagens ocuparão 65% do círculo */
+    height: 65%;            /* Mantém a proporção quadrada */
     
-   ; /* Deixa os ícones brancos */
+    /* ESSA É A PROPRIEDADE MÁGICA: object-fit */
+    object-fit: contain;    /* Garante que a imagem não estique ou achate */
+    
+    /* Remove filtros que podem esconder ícones coloridos */
+    filter: none !important;
+}
+
+/* 3. Ajuste específico para o Lattes (que na sua imagem parece maior) */
+.icone-circulo-whats img {
+    width: 50px; /* Se o ícone for muito detalhado, pode aumentar um pouco */
+    height: 50px;
+}
+
+.icone-circulo-email img {
+     width: 50px; /* Se o ícone for muito detalhado, pode aumentar um pouco */
+    height: 50px;
+}
+
+.icone-circulo-insta img {
+    width: 50px; /* Se o ícone for muito detalhado, pode aumentar um pouco */
+    height: 50px;
+}
+
+.icone-circulo.lattes img {
+    width: 30px; /* Se o ícone for muito detalhado, pode aumentar um pouco */
+    height: 30px;
+}
+/* 3. Ajuste específico para o Lattes (que na sua imagem parece maior) */
+.icone-circulo-whats img {
+    width: 50px; /* Se o ícone for muito detalhado, pode aumentar um pouco */
+    height: 50px;
+}
+
+.icone-circulo-email img {
+     width: 50px; /* Se o ícone for muito detalhado, pode aumentar um pouco */
+    height: 50px;
+}
+
+.icone-circulo-insta img {
+    width: 50px; /* Se o ícone for muito detalhado, pode aumentar um pouco */
+    height: 50px;
+}
+
+.icone-circulo-lattes img {
+    width: 50px; /* Se o ícone for muito detalhado, pode aumentar um pouco */
+    height: 50px;
+}
+
+/* 1. Prepara o círculo para a animação */
+.icone-circulo {
+    /* Suas regras atuais (width, height, etc) */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Cria a suavidade do movimento */
+    cursor: pointer; /* Transforma a seta do mouse na "mãozinha" de clique */
+}
+
+/* 2. O EFEITO HOVER: Quando o mouse passa por cima */
+.icone-circulo:hover {
+    transform: scale(1.1); /* Aumenta o tamanho em 10% */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15); /* Aumenta a sombra para dar profundidade */
+}
+
+/* 3. Garante que a imagem dentro também acompanhe o movimento */
+.icone-circulo img {
+    transition: transform 0.3s ease;
+}
+
+.icone-circulo:hover img {
+    transform: scale(1.05); /* A imagem cresce um pouquinho menos que o círculo para não cortar as bordas */
 }
 
 /* Estilo dos Cards de Local (seguindo LocaisAtendimento.html) */
@@ -636,11 +694,14 @@ footer {
   .header-sobre {
     background-color: #128c86; /* Azul acinzentado conforme a imagem */
     padding: 12px;
+    border-radius: 2px;
     text-align: center;
     margin-bottom: 20px;
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 10px;
+  
   }
 
   .header-sobre h1 {
@@ -659,5 +720,26 @@ footer {
   height: 300px; /* Define uma altura fixa para não ficar "gigante" */
   
 }
+.grade-contatos-digitais {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto 50px;  
+    justify-content: center;  /* Isso centraliza os 4 itens na tela */   
+    flex-wrap:  wrap;
+}
+
+.card-contato-digital {
+        flex: 0 0 calc(50% - 20px); /* Garante 2 colunas perfeitas */
+        max-width: 160px;          /* Limita a largura para o texto não espalhar */
+        word-wrap: break-word;     /* FORÇA a quebra de e-mails longos */
+        overflow-wrap: break-word;
+    }
+    .card-contato-digital p {
+        font-size: 0.70rem;        /* Diminui um pouco o texto do @ e e-mail */
+        line-height: 1.2;
+        padding: 0 5px;            /* Evita que o texto encoste no vizinho */
+    }
 
 }
