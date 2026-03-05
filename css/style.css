@@ -100,7 +100,7 @@ nav a:hover {
 /* 4. Conteúdo Principal (Hero Section) */
 .conteudo-principal {
   max-width: 900px;
-  margin: 80px auto;
+  margin: 10px auto ;
   text-align: center;
   padding: 0 20px;
 }
@@ -227,12 +227,12 @@ footer {
 
 /* Área da Logo */
 .footer-logo {
-  padding: 30px 0;
+  padding: 32px 0;
 }
 
 .footer-logo img {
-  height: 70px; /* Ajuste o tamanho conforme necessário */
-  width: auto;
+  height: 120px; /* Ajuste o tamanho conforme necessário */
+
 }
 
 /* Faixa Colorida (Igual ao modelo do Dr. Pedro) */
@@ -265,11 +265,16 @@ footer {
 /* Área da Logo */
 .footer-logo {
   background-color: #ffffff; /* Fundo branco para destacar a logo */
-  padding: 30px 0;
+  padding: 10px 0;
 }
 
 .footer-logo img {
-  height: 70px;
+  /* Aumentamos de 70px para um valor que preencha mais o espaço */
+    height: 100px; 
+    width: auto;
+    object-fit: contain;
+    /* Adicionamos uma transição suave caso queira colocar hover depois */
+    transition: all 0.3s ease;
 }
 
 /* Faixa de Informações (Turquesa da logo) */
@@ -560,6 +565,7 @@ footer {
     max-width: 800px; /* Alinha com o padrão do seu site */
     margin-left: auto;
     margin-right: auto;
+    
 }
 
 .faq-item .faq-resposta {
@@ -620,6 +626,180 @@ footer {
     color: #666;
 }
 
+.hero-principal {
+    padding: 80px 5%;
+    background: linear-gradient(135deg, #ffffff 0%, #f4fbfb 100%);
+    overflow: hidden;
+}
+
+.container-hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+/* Foto com Moldura Chique */
+.coluna-foto-roberta {
+    flex: 1;
+    position: relative;
+}
+
+.moldura-elegante {
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.08);
+    border: 8px solid #fff;
+    transition: transform 0.5s ease;
+}
+
+.moldura-elegante img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.moldura-elegante:hover {
+    transform: scale(1.02);
+}
+
+/* Conteúdo e Tipografia */
+.coluna-texto-roberta {
+    flex: 1.2;
+}
+
+.tagline {
+    color: var(--cor-primaria-turquesa);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.coluna-texto-roberta h1 {
+    font-size: 2.8rem;
+    color: #2c3e50;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+.mini-bio p, .mini-bio li {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.mini-bio ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.mini-bio li::before {
+    content: "✓";
+    color: var(--cor-primaria-turquesa);
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Botões de Agendamento */
+.botoes-agendamento {
+    display: flex;
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.btn-principal {
+    background-color: #25d366; /* Cor WhatsApp para conversão */
+    color: white;
+    padding: 18px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-principal:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+}
+
+.btn-secundario {
+    border: 2px solid var(--cor-primaria-turquesa);
+    color: var(--cor-primaria-turquesa);
+    padding: 18px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-secundario:hover {
+    background-color: var(--cor-primaria-turquesa);
+    color: white;
+}
+
+.secao-especialidades {
+    padding: 100px 5%;
+    background-color: #fff;
+    text-align: center;
+}
+
+.titulo-secao {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.subtitulo-secao {
+    color: var(--cor-primaria-turquesa);
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+
+.grade-especialidades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-especialidade {
+    padding: 40px 30px;
+    background: #fdfdfd;
+    border-radius: 20px;
+    border: 1px solid #f0f0f0;
+    transition: all 0.4s ease;
+}
+
+/* Efeito de "subir" igual ao que você usou no footer */
+.card-especialidade:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+    border-color: var(--cor-primaria-turquesa);
+}
+
+.icone-destaque {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.card-especialidade h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.card-especialidade p {
+    font-size: 0.95rem;
+    color: #777;
+    line-height: 1.5;
+}
 
 
 
@@ -810,4 +990,33 @@ footer {
         padding: 0 5px;            /* Evita que o texto encoste no vizinho */
     }
 
+    .container-hero {
+        /* INVERTE A ORDEM: O texto sobe e a foto desce no celular */
+        flex-direction: column-reverse; 
+        text-align: center;
+        gap: 30px; /* Diminui o espaço entre eles no celular */
+    }
+
+    .coluna-texto-roberta h1 {
+        font-size: 1.8rem; /* Evita que o título "escape" das laterais */
+        margin-top: 10px;
+    }
+
+    .coluna-foto-roberta {
+        width: 80%; /* Deixa a foto um pouco menor no celular para não ocupar a tela toda */
+        margin: 0 auto;
+    }
+    
+    .botoes-agendamento {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .secao-especialidades {
+        padding: 60px 5%;
+    }
+    .grade-especialidades {
+        grid-template-columns: 1fr; /* Uma coluna no celular para ficar bem legível */
+    }
 }
