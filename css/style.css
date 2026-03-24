@@ -393,7 +393,7 @@ footer {
     display: flex;
     justify-content: center;
     gap: 30px;
-    flex-wrap: wrap; /* Garante que no celular um fique embaixo do outro */
+    flex-wrap: nowrap; /* Garante que no celular um fique embaixo do outro */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -1019,4 +1019,12 @@ footer {
     .grade-especialidades {
         grid-template-columns: 1fr; /* Uma coluna no celular para ficar bem legível */
     }
+    .container-locais {
+        flex-wrap: wrap; 
+    }
+    .card-local {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
 }
