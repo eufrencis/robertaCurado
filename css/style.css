@@ -615,6 +615,7 @@ footer {
 /* Conteúdo e Tipografia */
 .coluna-texto-roberta {
     flex: 1.2;
+    margin-top: -50px;
 }
 
 .tagline {
