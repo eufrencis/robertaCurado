@@ -118,10 +118,7 @@ nav a:hover {
   font-weight: 400;
 }
 
-.conteudo-principal .nome-dr {
-  color: var(--cor-primaria-turquesa);
-  font-weight: bold;
-}
+
 
 /* Subtítulo de destaque (como o PhD) */
 .conteudo-principal h2 {
@@ -235,10 +232,6 @@ footer {
 }
 
 
-.secao-agendamento-ajustada {
-  margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
-}
 
 /* Container Geral */
 .secao-sobre {
@@ -453,8 +446,11 @@ footer {
     flex-wrap: nowrap;
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ajuste-css-antigo
 
 /* 3. Ajuste específico para o Lattes (que na sua imagem parece maior) */
 .icone-circulo-whats img {
@@ -494,11 +490,14 @@ footer {
     height: 50px;
 }
 
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> ajuste-css-antigo
 
 /* Estilo dos Cards de Local (seguindo LocaisAtendimento.html) */
 .card-local {
@@ -865,8 +864,11 @@ footer {
   }
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ajuste-css-antigo
 
   /* Garante que o container principal do seu site não aperte o calendário */
   .conteudo-principal {
