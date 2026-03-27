@@ -747,7 +747,7 @@ footer {
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   header {
     padding: 15px 0 0 0; /* Tira o padding lateral para a barra ocupar tudo */
     flex-direction: column; /* Coloca a logo em cima e a barra embaixo */
@@ -953,5 +953,29 @@ footer {
         flex: 1 1 100%;
         max-width: 100%;
     }
+     .card-local-roberta {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    /* ajustando foto do tablet */
+    @media (min-width: 768px) and (max-width: 1024px) {
+
+    /* 1. Ajuste no container da foto (se houver um) */
+    .coluna-foto {
+        width: 100%;           /* O container ocupa a largura toda */
+        display: flex;         /* Ajuda a centralizar a imagem */
+        justify-content: center;
+        padding: 20px 0;      /* Dá um respiro em cima e embaixo */
+    }
+
+    /* 2. Ajuste na imagem em si */
+    .coluna-foto img {
+        width: 80%;            /* Aumenta a foto para 80% da tela (não 100% para não esticar) */
+        max-width: 600px;     /* Mas não deixa passar de 600px para não perder qualidade */
+        height: auto;          /* Mantém a proporção da foto */
+        border-radius: 15px;   /* Mantém o cantinho arredondado (se tiver) */
+    }
+}
 
 }
