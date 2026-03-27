@@ -446,11 +446,6 @@ footer {
     flex-wrap: nowrap;
 }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> ajuste-css-antigo
 
 /* 3. Ajuste específico para o Lattes (que na sua imagem parece maior) */
 .icone-circulo-whats img {
@@ -490,14 +485,6 @@ footer {
     height: 50px;
 }
 
-<<<<<<< HEAD
-
-
-
-
-
-=======
->>>>>>> ajuste-css-antigo
 
 /* Estilo dos Cards de Local (seguindo LocaisAtendimento.html) */
 .card-local {
@@ -561,6 +548,13 @@ footer {
     transition: max-height 0.5s ease-out; /* Velocidade do deslize */
     background-color: #f9f9f9;
     text-align: left;
+}
+
+.faq-item.ativo .faq-resposta {
+    max-height: 800px; /* Valor alto para garantir que textos longos caibam */
+    opacity: 1;        /* Aparece suavemente */
+    padding-top: 10px;
+    padding-bottom: 25px;
 }
 
 
@@ -864,11 +858,7 @@ footer {
   }
 
 
-<<<<<<< HEAD
 
-
-=======
->>>>>>> ajuste-css-antigo
 
   /* Garante que o container principal do seu site não aperte o calendário */
   .conteudo-principal {
