@@ -9,3 +9,9 @@ document.querySelectorAll('.faq-pergunta').forEach(botao => {
     });
 });
 
+
+
+
+
+
+

@@ -10,7 +10,12 @@
   --cor-texto: #33413f;
   /* Branco puro para texto em botões */
   --cor-branco: #ffffff;
+
+  
 }
+
+/* 2. Definindo as cores quando o Modo Escuro ativar */
+
 
 /* 2. Estilo Global do Corpo */
 body {
@@ -392,15 +397,6 @@ footer {
     border-top: 5px solid var(--cor-secundaria-verde-limao);
 }
 
-.card-local-roberta img {
-
-  padding-top: px;
-
-
-}
-
-
-/* testando */ 
 
 
 
@@ -466,14 +462,11 @@ footer {
 
 
 
-
-
-
-
-
-/* testando */ 
-
 .card-local:hover {
+    transform: translateY(-10px);
+}
+
+.card-local-roberta:hover {
     transform: translateY(-10px);
 }
 
@@ -505,6 +498,7 @@ footer {
 /* Layout Geral da Seção */
 .secao-contato {
     padding: -15px 20px;
+    margin-bottom: 50px;
     text-align: center;
 }
 
@@ -559,10 +553,7 @@ footer {
     height: 50px;
 }
 
-.icone-circulo.lattes img {
-    width: 30px; /* Se o ícone for muito detalhado, pode aumentar um pouco */
-    height: 30px;
-}
+
 /* 3. Ajuste específico para o Lattes (que na sua imagem parece maior) */
 .icone-circulo-whats img {
     width: 50px; /* Se o ícone for muito detalhado, pode aumentar um pouco */
@@ -868,6 +859,8 @@ footer {
 
 
 
+
+
 @media (max-width: 768px) {
   header {
     padding: 15px 0 0 0; /* Tira o padding lateral para a barra ocupar tudo */
@@ -1054,6 +1047,8 @@ footer {
         line-height: 1.2;
         padding: 0 5px;            /* Evita que o texto encoste no vizinho */
     }
+
+  
 
     .container-hero {
         /* INVERTE A ORDEM: O texto sobe e a foto desce no celular */
