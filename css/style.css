@@ -131,10 +131,7 @@ nav a:hover {
   font-weight: bold;
 }
 
-.subtitulo-areas {
-  color: var(--cor-secundaria-verde-limao);
-  font-weight: bold;
-}
+
 
 /* Parágrafo de descrição */
 .conteudo-principal p {
@@ -146,46 +143,9 @@ nav a:hover {
   margin-right: auto;
 }
 
-/* 5. O Botão CTA Principal - Totalmente adaptado */
-.botao-consulta {
-  display: inline-flex;
-  align-items: center;
-  background-color: var(--cor-primaria-turquesa);
-  color: var(--cor-branco);
-  text-decoration: none;
-  padding: 15px 40px;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 1.2rem;
-  transition:
-    transform 0.2s,
-    background-color 0.3s;
-  box-shadow: 0 4px 6px rgba(22, 168, 161, 0.3);
-  border: 2px solid transparent;
-}
 
-.botao-consulta:hover {
-  background-color: #128c86; /* Um tom mais escuro para o hover */
-  transform: translateY(-2px);
-}
 
-/* O ícone de seta do botão */
-.seta-icone {
-  margin-left: 10px;
-  font-size: 1rem;
-}
 
-/* 6. A Frase Final Acolhedora - Usando o verde-limão */
-.frase-final {
-  margin-top: 80px;
-  text-align: center;
-  color: var(--cor-secundaria-verde-limao);
-  font-size: 1.4rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 20px;
-}
 
 #whats {
   position: fixed;
@@ -475,26 +435,7 @@ footer {
     margin-bottom: 10px;
 }
 
-.link-maps {
-    display: block;
-    margin: 15px 0;
-    color: var(--cor-primaria-turquesa);
-    text-decoration: none;
-    font-size: 0.95rem;
-    line-height: 1.4;
-    font-weight: 500;
-}
 
-.link-maps:hover {
-    text-decoration: underline;
-    color: var(--cor-secundaria-verde-limao);
-}
-
-.telefone-local {
-    font-weight: bold;
-    color: var(--cor-texto);
-    margin-top: 10px;
-}
 /* Layout Geral da Seção */
 .secao-contato {
     padding: -15px 20px;
@@ -511,31 +452,9 @@ footer {
     justify-content: center;  /* Isso centraliza os 4 itens na tela */   
     flex-wrap: nowrap;
 }
-.icone-circulo {
-    width: 100px;           /* Tamanho do círculo no PC */
-    height: 100px;
-    border-radius: 50%;
-    display: flex;          /* Ativa o Flexbox para centralizar a imagem */
-    align-items: center;    /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
-    background-color: #fff; /* Fundo branco para destacar os ícones */
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    overflow: hidden;       /* Garante que nada saia do círculo */
-    margin: 0 auto 15px;    /* Centraliza o círculo no card */
-}
 
-/* 2. A IMAGEM se ajusta ao container */
-.icone-circulo img {
-    /* Define o tamanho relativo ao círculo, não ao arquivo original */
-    width: 65%;             /* Todas as imagens ocuparão 65% do círculo */
-    height: 65%;            /* Mantém a proporção quadrada */
-    
-    /* ESSA É A PROPRIEDADE MÁGICA: object-fit */
-    object-fit: contain;    /* Garante que a imagem não estique ou achate */
-    
-    /* Remove filtros que podem esconder ícones coloridos */
-    filter: none !important;
-}
+
+
 
 /* 3. Ajuste específico para o Lattes (que na sua imagem parece maior) */
 .icone-circulo-whats img {
@@ -575,27 +494,11 @@ footer {
     height: 50px;
 }
 
-/* 1. Prepara o círculo para a animação */
-.icone-circulo {
-    /* Suas regras atuais (width, height, etc) */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Cria a suavidade do movimento */
-    cursor: pointer; /* Transforma a seta do mouse na "mãozinha" de clique */
-}
 
-/* 2. O EFEITO HOVER: Quando o mouse passa por cima */
-.icone-circulo:hover {
-    transform: scale(1.1); /* Aumenta o tamanho em 10% */
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15); /* Aumenta a sombra para dar profundidade */
-}
 
-/* 3. Garante que a imagem dentro também acompanhe o movimento */
-.icone-circulo img {
-    transition: transform 0.3s ease;
-}
 
-.icone-circulo:hover img {
-    transform: scale(1.05); /* A imagem cresce um pouquinho menos que o círculo para não cortar as bordas */
-}
+
+
 
 /* Estilo dos Cards de Local (seguindo LocaisAtendimento.html) */
 .card-local {
@@ -606,13 +509,7 @@ footer {
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
-.link-maps {
-    color: var(--cor-primaria-turquesa);
-    text-decoration: none;
-    font-weight: 500;
-    display: block;
-    margin-top: 10px;
-}
+
 
 /* Estilo do item individual */
 .faq-item {
@@ -667,12 +564,7 @@ footer {
     text-align: left;
 }
 
-.faq-item.ativo .faq-resposta {
-    max-height: 800px; /* Valor alto para garantir que textos longos caibam */
-    opacity: 1;        /* Aparece suavemente */
-    padding-top: 10px;
-    padding-bottom: 25px;
-}
+
 
 
 .faq-resposta p {
@@ -878,15 +770,7 @@ footer {
     height: 60px; /* Logo um pouco menor no celular */
   }
 
-  .secao-agendamento-final {
-    width: 85vw;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+
 
   /* A barra onde fica o ícone de 3 pontos */
   .menu-botao {
@@ -979,17 +863,9 @@ footer {
     font-size: 0.8rem;
   }
 
-  .secao-agendamento-final {
-    width: 100% !important;
-    left: 0 !important;
-    transform: none !important;
-    margin: 0 !important;
-  }
 
-  .secao-agendamento-final iframe {
-    /* Aumentamos para 1300px para garantir que nada seja cortado embaixo */
-    height: 1300px !important;
-  }
+
+
 
   /* Garante que o container principal do seu site não aperte o calendário */
   .conteudo-principal {
@@ -1073,9 +949,7 @@ footer {
         flex-direction: column;
         align-items: center;
     }
-    .secao-especialidades {
-        padding: 60px 5%;
-    }
+   
     .grade-especialidades {
         grid-template-columns: 1fr; /* Uma coluna no celular para ficar bem legível */
     }
